@@ -1,0 +1,11 @@
+package br.com.alura.maven.produtos;
+
+/**
+ * Hello world!
+ *
+ */
+public class App {
+	public static void main(String[] args) {
+		Produto produto = new Produto("Bala juquina sabor tangerina",0.15);
+	}
+}

@@ -1,0 +1,16 @@
+package br.com.alura.jpa.financas.modelo;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class Conta {
+	@Id
+	private Integer id;
+	private String titular;
+	private String numero;
+	private String banco;
+	private String agencia;
+	
+
+}

@@ -1,0 +1,8 @@
+package br.com.ana.jpa.financas.util;
+
+import br.com.ana.jpa.financas.modelo.Conta;
+
+public class PopulaConta {
+	Conta conta1 = new Conta("jao","0003","banco do brasil","1021");
+	
+}	

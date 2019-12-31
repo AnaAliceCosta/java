@@ -1,0 +1,5 @@
+package br.com.ana.jpa.financas.teste;
+
+public class TesteConta {
+
+}

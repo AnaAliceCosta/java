@@ -1,7 +1,0 @@
-package br.com.alura.jpa.financas.modelo;
-
-
-public class Conta {
-	private Integer id;
-
-}

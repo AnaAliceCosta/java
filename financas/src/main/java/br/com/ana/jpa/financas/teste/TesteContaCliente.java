@@ -1,30 +1,29 @@
 package br.com.ana.jpa.financas.teste;
 
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 
+import br.com.ana.jpa.financas.modelo.Cliente;
 import br.com.ana.jpa.financas.modelo.Conta;
 import br.com.ana.jpa.financas.util.JPAUtil;
 
-public class TesteConta {
-	public static void main(String[] args) {
-		Conta conta = new Conta();
-		conta.setTitular("ana");
-		conta.setBanco("nuBank");
-		conta.setAgencia("0001");
-		conta.setNumero("0002");
-		
+public class TesteContaCliente {
 
+	public static void main(String[] args) {
+		Cliente cliente = new Cliente();
+		cliente.setNome("pedro");
+		cliente.setEndereco("rua fulano,123");
+		cliente.setProfissao("professor");
+		
+		Conta conta = new Conta();
+		conta.setId(2);
+		cliente.setConta(conta);
 		EntityManager em = new JPAUtil().getEntityManager();
 		em.getTransaction().begin();
-		conta = em.find(Conta.class, 1);
-		em.remove(conta);
+		em.persist(cliente);
 		
 		em.getTransaction().commit();
 		em.close();
 
-		
 	}
 
 }

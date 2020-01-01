@@ -18,10 +18,9 @@ public class PopulaConta {
 		manager.persist(conta3);
 		manager.persist(conta4);
 		manager.persist(conta5);
+		
 		manager.getTransaction().commit();
 		manager.close();
 	}
-
-	
 	
 }	

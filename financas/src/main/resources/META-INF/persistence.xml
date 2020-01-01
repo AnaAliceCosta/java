@@ -6,12 +6,16 @@
 
 	<!-- unidade de persistencia com o nome financas -->
 	<persistence-unit name="financas">
+	
 
 		<!-- Implementação do JPA, no nosso caso Hibernate -->
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
 		<!-- Aqui são listadas todas as entidades -->
 		<class>br.com.ana.financas.modelo.Conta</class>
+		<class>br.com.ana.jpa.financas.modelo.Movimentacao</class>
+		<class>br.com.ana.jpa.financas.modelo.Categoria</class>
+			
 
 		<properties>
 			<!-- Propriedades JDBC -->

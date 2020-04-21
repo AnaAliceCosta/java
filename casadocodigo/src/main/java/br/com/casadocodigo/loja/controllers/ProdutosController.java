@@ -47,7 +47,7 @@ public class ProdutosController {
 	}
 	
 	@RequestMapping(method=RequestMethod.POST)
-	@CacheEvict(value="protudosHome",allEntries = true)
+	@CacheEvict(value="produtosHome", allEntries=true)
 	public ModelAndView gravar(MultipartFile sumario, @Valid Produto produto, BindingResult result, 
 				RedirectAttributes redirectAttributes){
 		
@@ -60,9 +60,9 @@ public class ProdutosController {
 		
 		dao.gravar(produto);
 		
-		redirectAttributes.addFlashAttribute("sucesso", "Produto cadastrado com sucesso!");
+		redirectAttributes.addFlashAttribute("message", "Produto cadastrado com sucesso!");
 		
-		return new ModelAndView("redirect:produtos");
+		return new ModelAndView("redirect:/produtos");
 	}
 	
 	@RequestMapping( method=RequestMethod.GET)
@@ -78,8 +78,13 @@ public class ProdutosController {
 	    ModelAndView modelAndView = new ModelAndView("/produtos/detalhe");
 	    Produto produto = dao.find(id);
 	    modelAndView.addObject("produto", produto);
-	    
 	    return modelAndView;
 	}
 	
+//	@RequestMapping("/{id}")
+//	@ResponseBody
+//	public Produto detalheJson(@PathVariable("id") Integer id){
+//	    Produto produto = dao.find(id);
+//	    return produto;
+//	}
 }
